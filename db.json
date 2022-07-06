@@ -1,0 +1,151 @@
+{
+  "books": [
+    {
+      "_id": 0,
+      "_title": "Title 1",
+      "_description": "Description 1",
+      "_author": "Author One",
+      "_publisher": "Publisher One",
+      "_price": 100,
+      "id": 1
+    },
+    {
+      "_id": 0,
+      "_title": "Title 2",
+      "_description": "Description 2",
+      "_author": "Author Two",
+      "_publisher": "Publisher Two",
+      "_price": 200,
+      "id": 2
+    },
+    {
+      "_id": 0,
+      "_title": "Title 5",
+      "_description": "Description 5",
+      "_author": "Author Five",
+      "_publisher": "Publisher Five",
+      "_price": 500,
+      "id": 5
+    },
+    {
+      "_id": 0,
+      "_title": "Title 6",
+      "_description": "Description 6",
+      "_author": "Author Six",
+      "_publisher": "Publisher Six",
+      "_price": 600,
+      "id": 6
+    },
+    {
+      "_id": 0,
+      "_title": "Title 7",
+      "_description": "Description 7",
+      "_author": "Author Seven",
+      "_publisher": "Publisher Seven",
+      "_price": 700,
+      "id": 7
+    },
+    {
+      "_id": 0,
+      "_title": "Title 8",
+      "_description": "Description 8",
+      "_author": "Author Eight",
+      "_publisher": "Publisher Eight",
+      "_price": 800,
+      "id": 8
+    },
+    {
+      "_id": 0,
+      "_title": "Title 9",
+      "_description": "Description 9",
+      "_author": "Author Nine",
+      "_publisher": "Publisher Nine",
+      "_price": 900,
+      "id": 9
+    },
+    {
+      "_id": 0,
+      "_title": "Title 10",
+      "_description": "Description 10",
+      "_author": "Author 10",
+      "_publisher": "Publisher Ten",
+      "_price": 1000,
+      "id": 10
+    },
+    {
+      "_id": 0,
+      "_title": "Title 11",
+      "_description": "Description 11",
+      "_author": "Author Eleven",
+      "_publisher": "Publisher Eleven",
+      "_price": 1100,
+      "id": 11
+    },
+    {
+      "_id": 0,
+      "_title": "Title 12",
+      "_description": "Description 12",
+      "_author": "Author Twelve",
+      "_publisher": "Publisher Twelve",
+      "_price": 1200,
+      "id": 12
+    },
+    {
+      "_id": 0,
+      "_title": "Title 13",
+      "_description": "Description 13",
+      "_author": "Author Thirteen",
+      "_publisher": "Publisher Thirteen",
+      "_price": 1300,
+      "id": 13
+    },
+    {
+      "_id": 0,
+      "_title": "Title 14",
+      "_description": "Description 14",
+      "_author": "Author Fourteen",
+      "_publisher": "Publisher Fourteen",
+      "_price": 1400,
+      "id": 14
+    },
+    {
+      "_id": 0,
+      "_title": "Title 15",
+      "_description": "Description 15",
+      "_author": "Author Fifteen",
+      "_publisher": "Publisher Fifteen",
+      "_price": 1500,
+      "id": 15
+    }
+  ],
+  "userSignup": [
+    {
+      "name": "user.one",
+      "email": "user.one@users.com",
+      "password": "userone",
+      "passwordAgain": "userone",
+      "id": 1
+    },
+    {
+      "name": "user.two",
+      "email": "user.two@users.com",
+      "password": "usertwo",
+      "passwordAgain": "usertwo",
+      "id": 2
+    },
+    {
+      "name": "user.three",
+      "email": "user.three@users.com",
+      "password": "userthree",
+      "passwordAgain": "userthree",
+      "id": 3
+    },
+    {
+      "name": "user.four",
+      "email": "user.four@users.com",
+      "password": "userfour",
+      "passwordAgain": "userfour",
+      "id": 4
+    }
+  ]
+}

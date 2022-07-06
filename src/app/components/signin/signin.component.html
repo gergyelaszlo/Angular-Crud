@@ -1,0 +1,14 @@
+<div class="form-container">
+  <form [formGroup]="signinForm" (ngSubmit)="signin()" class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <input formControlName="email" type="email" class="form-control" placeholder="Email address">
+    <div *ngIf="email?.invalid && (email?.touched || email?.dirty)" class="alert alert-warning my-3" role="alert">
+      <span *ngIf="email?.errors?.['required']">Please add your e-mail address!</span>
+    </div>
+    <input formControlName="password" type="password" class="form-control my-3" placeholder="Password">
+    <div *ngIf="password?.invalid && (password?.touched || password?.dirty)" class="alert alert-warning my-3" role="alert">
+      <span *ngIf="password?.errors?.['required']">Please add your password!</span>
+    </div>
+    <button [disabled]="signinForm.invalid" class="btn btn-primary" type="submit">Sign in</button>
+  </form>
+</div>

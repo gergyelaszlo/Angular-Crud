@@ -1,0 +1,99 @@
+<button class="btn btn-outline-success mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Create</button>
+
+<div class="col-1">
+  <select (change)="onTableSizeChange($event)" class="form-select form-select-sm mt-5" aria-label=".form-select-sm example">
+    <option *ngFor="let size of tableSizes">{{size}}</option>
+  </select>
+</div>
+
+<table class="table table-success table-striped mt-5" [@crudtable]>
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Author</th>
+    <th scope="col">Publisher</th>
+    <th scope="col">Price</th>
+    <th scope="col">Actions</th>
+    <th scope="col">Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of allBookData | paginate:{itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index;">
+    <td>{{book.id}}</td>
+    <td>{{book._title}}</td>
+    <td>{{book._description}}</td>
+    <td>{{book._author}}</td>
+    <td>{{book._publisher}}</td>
+    <td>{{book._price}}</td>
+    <td>
+      <button (click)="editBookData(book)" class="btn btn btn-warning mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+      <button (click)="deleteBookFromData(book)" class="btn btn-danger">Delete</button>
+    </td>
+    <td>
+      <button class="btn btn-outline-dark" [routerLink]="['/details/' + book.id]">View</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div>
+  <pagination-controls class="pagination justify-content-center" previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>
+
+<div class="modal fade text-black" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create new book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-black">
+        <form [formGroup]="bookForm" class="col-7 container-xl mt-5">
+          <div class="mb-3">
+            <label for="titleInput" class="form-label"><strong>Title</strong></label>
+            <input type="text" class="form-control" id="titleInput" formControlName="title">
+            <div *ngIf="title?.invalid && (title?.touched || title?.dirty)" class="alert alert-warning my-3" role="alert">
+              <span *ngIf="title?.errors?.['required']">Please add title!</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="descriptionInput" class="form-label"><strong>Description</strong></label>
+            <textarea type="text" class="form-control" id="descriptionInput" formControlName="description" rows="10"></textarea>
+            <div *ngIf="description?.invalid && (description?.touched || description?.dirty)" class="alert alert-warning my-3" role="alert">
+              <span *ngIf="description?.errors?.['required']">Please add description!</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="authorInput" class="form-label"><strong>Author</strong></label>
+            <input type="text" class="form-control" id="authorInput" formControlName="author">
+            <div *ngIf="author?.invalid && (author?.touched || author?.dirty)" class="alert alert-warning my-3" role="alert">
+              <span *ngIf="author?.errors?.['required']">Please add author!</span>
+              <span *ngIf="author?.errors?.['pattern']">Enter only characters!</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="publisherInput" class="form-label"><strong>Publisher</strong></label>
+            <input type="text" class="form-control" id="publisherInput" formControlName="publisher">
+            <div *ngIf="publisher?.invalid && (publisher?.touched || publisher?.dirty)" class="alert alert-warning my-3" role="alert">
+              <span *ngIf="publisher?.errors?.['required']">Please add publisher!</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="priceInput" class="form-label"><strong>Price</strong></label>
+            <input type="number" class="form-control" id="priceInput" formControlName="price">
+            <div *ngIf="price?.invalid && (price?.touched || price?.dirty)" class="alert alert-warning my-3" role="alert">
+              <span *ngIf="price?.errors?.['required']">Please add price!</span>
+              <span *ngIf="price?.errors?.['pattern']">Enter only numbers!</span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button (click)="updateBookData()" type="button" class="btn btn-dark" data-bs-dismiss="modal">Update</button>
+        <button (click)="addBookToData()" type="button" class="btn btn-dark" data-bs-dismiss="modal">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

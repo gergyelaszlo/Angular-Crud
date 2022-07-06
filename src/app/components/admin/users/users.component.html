@@ -1,0 +1,27 @@
+<table class="table table-danger table-striped mt-5">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">E-mail</th>
+    <th scope="col">Password</th>
+    <th scope="col">Actions</th>
+    <th scope="col">Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of allUserData">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.password}}</td>
+    <td>
+      <button class="btn btn btn-warning mx-4">Update</button>
+      <button (click)="deleteUserFromList(user)" class="btn btn-danger">Delete</button>
+    </td>
+    <td>
+      <button class="btn btn-outline-dark">View</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

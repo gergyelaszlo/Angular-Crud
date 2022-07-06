@@ -1,0 +1,22 @@
+<div class="form-container">
+  <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="form-signup">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <input type="text" class="form-control" placeholder="Name" formControlName="name">
+    <div *ngIf="name?.invalid && (name?.touched || name?.dirty)" class="alert alert-warning my-3" role="alert">
+      <span *ngIf="name?.errors?.['required']">Please add your name!</span>
+    </div>
+    <input type="email" class="form-control my-3" placeholder="Email address" formControlName="email">
+    <div *ngIf="email?.invalid && (email?.touched || email?.dirty)" class="alert alert-warning my-3" role="alert">
+      <span *ngIf="email?.errors?.['required']">Please add your e-mail address!</span>
+    </div>
+    <input type="password" class="form-control my-3" placeholder="Password" formControlName="password">
+    <div *ngIf="password?.invalid && (password?.touched || password?.dirty)" class="alert alert-warning my-3" role="alert">
+      <span *ngIf="password?.errors?.['required']">Please add your e-mail address!</span>
+    </div>
+    <input type="password" class="form-control my-3" placeholder="Password again" formControlName="passwordAgain">
+    <div *ngIf="passwordAgain?.invalid && (passwordAgain?.touched || passwordAgain?.dirty)" class="alert alert-warning my-3" role="alert">
+      <span *ngIf="passwordAgain?.errors?.['required']">Please add your e-mail address!</span>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign up</button>
+  </form>
+</div>
